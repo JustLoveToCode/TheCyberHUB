@@ -11,8 +11,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Creating the function for performSearch Functionality
     function performSearch() {
+        // Trim the Spaces Before and After the Search
+        // searchInput.value will return the String itself
         const input = searchInput.value.trim();
+        // If the input actually exist
         if (input) {
+            // Ensure that the Strings can be safely included in the URL
             const encodedInput = encodeURIComponent(input);
             const searchUrl = `https://www.google.com/search?q=${encodedInput}`;
             window.location.href = searchUrl;
@@ -25,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const input = searchInput.value.trim();
         // If the input actually exist
         if (input) {
+            // Ensure that the Strings can be safely included in the URL
             const encodedInput = encodeURIComponent(input);
             const luckySearchUrl = `https://www.google.com/search?q=${encodedInput}&btnI`;
             window.location.href = luckySearchUrl;
