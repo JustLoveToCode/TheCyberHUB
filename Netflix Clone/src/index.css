@@ -1,0 +1,12 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+/* Creating the background:black for the body */
+/* The font color would be white */
+body{
+  background:black;
+  color:white;
+}

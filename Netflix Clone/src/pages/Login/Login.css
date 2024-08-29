@@ -1,0 +1,133 @@
+.login{
+    height: 100vh;
+    background-image: linear-gradient(#0000007e, #0000007e), url(../../assets/background_banner.jpg);
+    padding: 20px 8%;
+}
+
+.login-logo{
+    width:150px;
+}
+
+/* Putting the width to be 150px for the logo */
+.login-form{
+    /* Setting the width to be 100% of the parent container */
+    width: 100%;
+    /* Setting the max-width to be 450px */
+    max-width: 450px;
+    background: rgba(0,0,0,0.75);
+    /* Adding the border-radius on the NETFLIX Logo */
+    border-radius: 5px;
+    padding: 50px;
+    margin: auto;
+}
+
+.login-form h1{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.login-form input{
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    /* Creating the gap on the Top and Bottom Between
+    the Elements */
+    margin: 12px 0;
+    border: 0;
+    outline:0;
+    padding: 16px 20px;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+
+/* Targeting the placeholder CSS Properties */
+.login-form input::placeholder{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.login-form button{
+    width: 100%;
+    border: 0;
+    outline:0;
+    padding: 16px;
+    font-weight: 500;
+    background: #e50914;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+
+
+}
+
+.form-help{
+    /* Split the items to be Side By Side */
+    display: flex;
+   
+    align-items:center;
+    justify-content:space-between;
+    font-size: 13px;
+}
+
+.remember{
+    /* display: flex on the children inside the div */
+    display: flex;
+    align-items: center;
+    /* Create the gap between the children elements */
+    gap: 5px;
+}
+
+/* Getting the checkbox to be
+width of 18px and height of 18px */
+/* Creating the width and height of 18px 
+for the checkbox */
+.remember input{
+    width: 18px;
+    height: 18px;
+}
+
+
+.form-switch{
+    margin-top:40px;
+    color: #737373;
+}
+
+.form-switch span{
+    margin-left: 6px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.login-spinner{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-spinner img{
+    width: 60px;
+}
+
+/* Using Media Query to Change
+the padding and margin */
+@media (max-width: 500px) {
+    .login{
+       padding: 15px 5%; 
+    }
+    .login-form{
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+}

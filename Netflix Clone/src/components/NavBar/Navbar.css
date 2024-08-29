@@ -1,0 +1,132 @@
+.navbar{
+    width:100%;
+    /* padding from top and bottom, 6% from left and right */
+    padding: 20px 6%;
+    /* display: flex on the navbar will flex the div of the navbar-left
+    and the navbar-right Horizontally  */
+    display:flex;
+    /* This will force the navbar-left and navbar-right to be spaced
+    across the screen from one another */
+    justify-content: space-between;
+    /* Navbar will be fixed at the top even if we scroll downward */
+    position: fixed;
+    font-size: 14px;
+    /* The color of the font will be the #e5e5e5 */
+    color: #e5e5e5;
+    background-image:linear-gradient(180deg, rgba(0,0,0,0.7) 10%, transparent);
+    /* The z-index of 1 mean that my items will always be placed 
+    at the front of the background image */
+    z-index:1;
+}
+
+.navbar-left{
+    /* Display the items inside the direct children of the navbar-left
+    in the Horizontal Manner */
+    display:flex;
+    align-items:center;
+    gap: 50px;
+}
+
+/* Targeting the img tag inside the navbar-left tag */
+.navbar-left img {
+    /* Make the width of the img 90px */
+    width: 90px;
+}
+
+.navbar-left ul {
+    /* Make the li inside the ul display: flex which make them aligned horizontally */
+    display:flex;
+    /* Make the bullet point disappear */
+    list-style: none;
+    /* Create the gap between the li items */
+    gap: 20px;  
+}
+
+.navbar-left ul li{
+    cursor:pointer;
+}
+
+.navbar-right{
+    /* Make the items inside the navbar-right to be aligned horizontally */
+    display:flex;
+    gap: 20px;
+    align-items:center;
+}
+
+.navbar-right .icons{
+    width: 20px;
+    cursor:pointer;
+}
+
+.navbar-right .profile{
+    /* Making a border-radius of 5px */
+    border-radius: 5px;
+    /* Setting the width of the profile to be 60px */
+    width: 25px;
+}
+
+.navbar-profile{
+    display:flex;
+    align-items:center;
+    gap: 5px;
+    cursor:pointer;
+    /* position: relative */
+    position: relative;
+}
+
+.navbar .dropdown{
+    /* This is the position: absolute with the
+    position: relative as the parent */
+    position:absolute;
+    /* top:100% from the parent navbar-profile and right:0 */
+    /* This will display the dropdown just below the profile icon */
+    top:100%;
+    right:0;
+    width: max-content;
+    /* Creating the background of #191919 */
+    background: #191919;
+    padding: 18px 22px;
+    border-radius: 2px;
+    text-decoration: underline;
+    z-index:1;
+    display:none;
+}
+
+/* Creating the font-size on the p tag */
+.navbar .dropdown p{
+    font-size: 13px;
+    cursor:pointer;
+}
+
+/* Adding the Hover Effect on the navbar-profile */
+/* And once the hover effect is on, 
+the display: block effect will show */
+.navbar-profile:hover .dropdown{
+    display: block;
+}
+
+.nav-dark{
+    background: #14141414;
+}
+
+@media(max-width: 800px){
+    .navbar{
+        padding: 20px 4%;
+    }
+    .navbar-left ul{
+        display: none;
+    }
+    .navbar img{
+        height:25px;
+    }
+}
+
+@media(max-width:500px){
+    .navbar img{
+        height:20px
+    }
+    .navbar-right{
+        gap:10px;
+    }
+}
+
