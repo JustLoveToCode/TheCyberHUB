@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Display the Most Recent Rendering Engine Available
+     which is the "edge" mode, it ensure that the Page is 
+     Displayed with the Modern Standards and Features rather
+     than in the Compatibility Mode with the Older IE Versions-->
+     <!-- By using IE=edge, you are preventing the Internet Explorer
+      from using any Older Compatibility Modes that might render
+      in the way that Emulate the Older Versions of the Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- width = device-width: This will ensure that the viewport actually
+     matched the Device Screen Width -->
+     <!-- initial-scale = 1.0 Set the Default Zoom to be 100% -->
+      <!-- viewport is the Visible Area of the Website Page on the
+       device screen -->
+       <!-- Viewport is the Region whereby the Content is Visible -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- link rel="icon" mean that it will be used as the Favicon
+     on the Top Left Hand Corner of the Screen as the Icon-->
+    <link rel="icon" href="./images/Google.png" type="image/png">
+    <!-- link to the style.css file -->
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js"></script>
+    
+</head>
+<body>
+    <!-- Header -->
+     <header>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a class="link" href="">Gmail</a>
+                </li>
+                <li>
+                    <a class="link" href="">Images</a>
+                </li>
+                <li>
+                    <div class="shadow">
+                        <a class="menu-icon" href=""><i class="fas fa-bars"></i></i></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="shadow">
+                        <a class="user-icon" href=""><span>L</span></a>
+                    </div>
+                </li>
+            </ul>
+
+        </nav>
+     </header>
+
+    <!-- Content -->
+     <section class="content-section">
+        <!-- div are block element in HTML -->
+            <div class="content-wrapper">
+                <!-- Using the Logo of Google -->
+                <img class="logo-img" src="./images/Google_Logo.png" alt="Google Logo"/>
+            </div>
+        <!-- div are block element in HTML -->
+         
+            <div class="search-bar">
+                <!-- To note that i and input are inline element -->
+                 <!-- Getting the Icon from the Font Awesome Library -->
+                <i class="fas fa-search" id="hourglass-icon"></i>
+                <input id="search-input" class="search-input" type="text"/>
+                <i class="fas fa-keyboard"></i>
+                <i class="fas fa-microphone"></i>
+            </div>
+            <div class="search-btns">
+                <button class="google-search-btn">Google Search</button>
+                <button class="lucky-search-btn">I'm Feeling Lucky</button>
+            </div>
+            <div class="language">
+                <p>Google Offered in:<a href="">Maori</a></p>
+            </div>
+        
+     </section>
+
+    <!-- Footer -->
+     <footer>
+        <div class="footer-content upper-footer">
+            <p>Australia</p>
+        </div>
+
+        <div class="footer-content lower-footer">
+            <ul class="lower-left-footer">
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Advertising</a>
+                </li>
+                <li>
+                    <a href="">Business</a>
+                </li>
+                <li>
+                    <a href="">How Search Work</a>
+                </li>
+            </ul>
+            <ul class="lower-right-footer">
+                <li>
+                    <a href="">Privacy</a>
+                </li>
+                <li>
+                    <a href="">Terms</a>
+                </li>
+                <li>
+                    <a href="">Settings</a>
+                </li>
+
+            </ul>
+        </div>
+     </footer>  
+</body>
+</html>

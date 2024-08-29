@@ -1,0 +1,302 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* Removing the Bullet Point */
+li{
+    list-style-type: none;
+
+}
+/* Setting the Text Decoration and Underline
+to be nil */
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling the NavBar Section */
+header{
+    /* The border will be created to fill
+    the Entire Content */
+    /* Since we have Specified the height,
+    the height will be at that 60px */
+    height: 60px;
+}
+
+.navbar{
+    /* At 100%, it will take the
+    entire height of 60px */
+    height: 100%;
+    /* At 100%, it will take the
+    entire weight of screen */
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.navbar ul{
+    /* At 100%, it will take the
+    Entire Height of 60px */
+    height: 100%;
+    
+    /* Make this a flex box item */
+    display:flex;
+    /* flex-end move the items
+    all the way to the right */
+    justify-content: flex-end;
+    /* This will align the items center
+    of the border */
+    /* align the items to the center of the
+    60px border */
+    align-items: center;
+    font-size: 20px;
+}
+
+.navbar ul li{
+   
+    /* Creating space on the left side of the li element */
+    margin-left: 15px;
+}
+
+.navbar ul li a{
+    color: black;
+}
+
+
+.link:hover{
+    text-decoration: underline;
+}
+
+.shadow{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    /* display:flex on the children elements */
+    display:flex;
+    /* Align the items center Horizontally within the parent div element */
+    justify-content:center;
+    /* Align the items center Vertically within the parent div element */
+    align-items: center;
+}
+
+.shadow:hover{
+    background-color: rgba(0,0,0,0.03);
+}
+
+.menu-icon,
+.user-icon span{
+    font-size: 20px;
+}
+
+.user-icon span{
+    color: white;
+}
+
+.user-icon{
+    /* The background-color will fill as much
+    as the content */
+    background-color: orange;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Styling the Content Section */
+
+.content-section{
+   
+    flex-grow: 1;
+    display: flex;
+    /* Align the children in the Vertical Manner */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.content-wrapper{
+   
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom:100px;
+}
+
+.logo-img{
+    
+    /* Setting the width of the Google Image to be 300px */
+    width: 300px;
+    margin-bottom: -150px;
+}
+
+.search-bar{
+   
+    width: 600px;
+    height: 45px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.search-bar:hover{
+    box-shadow:0px 0px 4px 0px #858585;
+}
+
+.search-bar i{
+    font-size: 20px;
+    color: gray;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.search-bar input{
+    /* Will grow to take up all Available space */
+    flex-grow: 1;
+    height: 30px;
+    margin-right: 13px;
+    /* Remove the border Outline */
+    border: none;
+}
+
+.search-bar input:focus{
+    outline: none;
+}
+
+/* Create Space Between the
+Group Of Buttons and the Google Logo */
+.search-btns{
+    margin-top: 20px;
+}
+
+/* Creating the height
+for the Individual Button */
+.search-btns button{
+    height: 30px;
+    font-size: 15px;
+    padding:5px;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    background-color: #f2f3f4;
+}
+
+
+.search-btns button:hover{
+    border: 1px solid lightgray;
+
+}
+
+.google-search-btn{
+    width: 120px;
+}
+
+.lucky-search-btn{
+    width: 150px;
+}
+
+
+.language{
+ 
+    margin-top:20px;
+}
+
+.language p a{
+    color: blue;
+}
+
+.language p a:hover{
+    text-decoration: underline;
+}
+
+
+/* Styling the Footer Of Google HomePage */
+footer{
+    background-color: #f2f2f2;
+    height: 100px;
+
+}
+
+.footer-content{
+    display:flex;
+    align-items:center;
+    padding: 20px;
+}
+
+.upper-footer{
+    
+    height: 50%;
+    border-bottom: 1px solid lightgray;
+}
+
+.lower-footer{
+
+    
+    height: 50%;
+    display:flex;
+    justify-content: space-between
+}
+
+.lower-footer ul li a{
+    font-size: 14px;
+    color: gray;
+}
+
+.lower-footer ul li a:hover{
+    text-decoration: underline;
+}
+
+.lower-left-footer{
+    display: flex;
+}
+
+.lower-left-footer li a{
+    margin-right:15px;
+}
+
+.lower-right-footer{
+    display: flex;
+}
+
+.lower-right-footer li a{
+    margin-left: 15px;
+}
+
+
+@media only screen and (max-width:650px){
+    
+    /* Search Bar */
+    .search-bar{
+        width: 90%
+    }
+    /* Footer Component */
+    /* Change in the height element */
+    footer{
+        height: 150px;
+    }
+    /* Change in the height element */
+    .upper-footer{
+        height: 50px;
+    }
+
+    .lower-footer{
+        height: 100px;
+        flex-direction: column;
+    }
+}
+
+
+
