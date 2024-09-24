@@ -1,0 +1,1059 @@
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+// Creating the Standardized root for the Variables here
+:root{
+    --color-primary: #191d2b;
+    --color-secondary: #27AE60;
+    --color-white: #FFFFFF;
+    --color-black:#000;
+    --color-grey0: #f8f8f8;
+    --color-grey-1: #dbe1e8;
+    --color-grey-2: #b2becd;
+    --color-grey-3: #6c7983;
+    --color-grey-4: #454e56;
+    --color-grey-5: #2a2e35;
+    --color-grey-6: #12181b;
+    --br-sm-2: 14px;
+    --box-shadow-1: 0 3px 15px rgba(0,0,0,.2);
+}
+
+// Toggling the light-mode here
+.light-mode{
+    --color-primary: #fbfcfe;
+    --color-secondary: #27AE60;
+    --color-white: #191d2b;
+    --color-black:#000;
+    --color-grey0: #FFB6C1;
+    --color-grey-1: #FF69B4;
+    --color-grey-2: black;
+    --color-grey-3: #C71585;
+    --color-grey-4: #FFCCCB;
+    --color-grey-5: #00d0ff;
+    --color-grey-6: #FF91A4;
+}
+
+// This is the Default Properties for the 
+// body element
+body{
+    background-color: var(--color-primary);
+    color:var(--color-white);
+    font-family: 'Poppins', sans-serif;  
+    font-size: 1.1rem;
+    transition: all .4s ease-in-out;
+}
+
+header{
+    min-height:100vh;
+    color:var(--color-white);
+    overflow: hidden;
+
+}
+
+a{
+    // inline-block do not start on a new line
+    display: inline-block;    
+    text-decoration: none;
+    // inherit from the parent
+    color: inherit;
+    // inherit from the parent
+    font-family: inherit;
+}
+
+// Targeting the html element section
+section{
+    min-height: 100vh;
+    width:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    padding: 3rem 18rem;
+}
+
+// Targeting the class section
+.section{
+    // This is the initial state of the section
+    transform: translateY(-100%) scale(0);
+    transition: all .4s ease-in-out;
+    background-color: var(--color-primary);
+}
+
+.sec1{
+    display: none;
+    // This is the final state of the sec1
+    transform: translateY(0) scale(1);
+
+
+}
+
+.sec2{
+    display: none;
+    transform: translateY(0) scale(1);
+
+    
+}
+
+.sec3{
+    display: none;
+    transform: translateY(0) scale(1);
+
+    
+}
+
+.sec4{
+    display: none;
+    transform: translateY(0) scale(1);
+
+}
+
+
+
+.sec5{
+    display: none;
+    transform: translateY(0) scale(1);
+
+}
+
+// Once the class of active is displayed
+// it will have the display:block property
+// When the active class is applied,
+// the display: block meake the sec1,2,3,4,5
+// visible from display: none to display: block
+.active{
+    display: block;
+    animation: scaleAnim 1s ease-in-out;
+    // The 0% represent the initial state
+    // scale(0) mean that it will not be seen and it is invisible
+    // and 100% represent the final state and it will be seen
+    @keyframes scaleAnim{
+        // This is the initial state of 0%
+        0%{
+            // This will be placed off-screen with the scale(0)
+            transform: translateY(-100%) scale(0)
+        }
+        // This is the final state of 100%
+        100%{
+            // This will be placed on the screen and it will be visible with
+            // the scale(1)
+            transform: translateY(0) scale(1)
+        }
+    }
+}
+
+.controls{
+    // Position will be fixed
+    position: fixed;
+    // Always Position it at the Very Top
+    z-index:10;
+    // 50% from the Top of the Browser
+    top: 50%;
+    // Move the Entire Controls to the Right
+    // and shift it to the left by 5%
+    right:5%;
+    // Make it a FlexBox Items
+    display: flex;
+    // flex-direction in the Vertical Manner
+    flex-direction: column;
+    // Align the items to the Center
+    align-items: center;
+    justify-content: center;
+    // Move Up the Y-axis by 50%
+    transform: translateY(-50%);
+    // Nesting for scss and not for css
+    // Creating the control class here
+    // This is the active-btn class here
+    .active-btn{
+        background-color: var(--color-secondary) !important;
+        transition: all .4s ease-in-out;
+        i {
+            color: var(--color-white) !important;
+        }
+    }
+    
+    .control{
+        // Create the padding for the bottom
+        // top, left and right hand side
+        padding: 1rem;
+        // Make the cursor to be pointer:
+        cursor: pointer;
+        // Getting the background-color of the Button
+        background-color: var(--color-grey-4);
+        // Make the width and height the Same
+        // width is 55px
+        width: 55px;
+        // height is 55px
+        height: 55px;
+        // Make it a Circle using the 50% Percentage
+        border-radius: 50%;
+        // Create the Spacing Between the Controls
+        // of 0.7rem for the Top and Bottom Spacing
+        // For the left and right, it will be 0
+        margin: 0.7rem 0;
+        // Make it a FlexBox Items
+        display: flex;
+        // Make the items inside the circle to be Centered
+        justify-content: center;
+        // Make the items inside the circle to be Centered
+        align-items: center;
+        // Creating the Box Shadow on the Button Component
+        box-shadow: var(--box-shadow-1);
+        i{
+            font-size: 1.2rem;
+            color: var(--color-grey-2);
+            pointer-events: none;
+        }
+    } 
+}
+
+.theme-btn{
+    // This is by Default from the Browser Window
+    top: 3%;
+    right: 3%;
+    // Setting the width and height of the Button Component
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--color-grey-4);
+    cursor:pointer;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+    transition: all .1s ease-in-out;
+    &:active{
+        transform: translateY(-3px);
+    }
+    i{
+        font-size: 1.5rem;
+        color: var(--color-grey-2);
+        pointer-events: none;
+    }
+
+}
+
+
+// Header Contents
+// display:grid create Grid Layout for the children
+// allowing for Precise Control over their Placements and Size
+// The grid-template-columns: repeat(2,1fr) rule specified that the grid
+// should have 2 Columns, each taking up Equal Share of the Available Space
+// Grid Layout: The Children of the Container are laid in the Grid Layout
+// Each child become the Grid Item
+// repeat(2,1fr) mean it will create 2 Columns, the 1fr unit mean each 
+// column will take up One Fraction of the Available Space, Distributing the 
+// Width Equality
+// The height: 100% Rule for the Grid Container mean it will take up the Full
+// Height of the parent container, allowing the Grid Items to Expand Vertically
+// to fill the Vertical Space
+// min-height: 100vh: This unit vh stand for viewport height.
+// this property set the minimum height of the element. If the content
+// inside the element is taller, the element will expand to fit the content
+// The element itself will expand beyond the height of the Viewport
+// which may lead to scrolling of the Page
+// Viewport: The Viewport is the Visible Range of the WebPage in the
+// Browser Window. Its height is fixed based on the User Screen Size
+// Element Growth: When the Content within the element exceed the 
+// Viewport Height, the element will grow taller than the 100vh
+// This mean that the Content that overflow the Viewport will require
+// the user to scroll downward to see them
+// As the element grow, if it exceed the Viewport hEIGHT
+// it will require the User to Scroll Downward to allow for scrolling
+// to view the Additional Content
+
+.header-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 100vh;
+
+    // Target the left-header
+    .left-header{
+      display: flex;
+      align-items: center;
+      position: relative;
+    // Target the h-shape
+      .h-shape{
+        transition: all .4s ease-in-out;
+        width: 65%;
+        height: 100%;
+        background-color: var(--color-secondary);
+        position: absolute;
+        left:0;
+        top:0;
+        /* Put it Behind the Image */
+        z-index:-1;
+        clip-path: polygon(0% 0%, 75% 0%, 47.3% 100.3%, 0% 100%);
+      }
+    // transition: all .4s ease-in-out property in the .image class
+    // mean that any changes to the properties of the elements with the
+    // class image will be animated over the 0.4s with the ease-in-out function
+      .image{
+        // Create the border-radius here
+        border-radius:var(--br-sm-2);
+        // The height and width of the div with the class image is set at 90% and 60% 
+        // respectively here
+        height: 90%;
+        width: 60%;
+        margin-left: 4rem;
+
+        background-color: var(--color-black);
+        transition: all .4s ease-in-out;
+        // Setting the width and the height to fill
+        // out 100% in its entirety
+        img{
+            width: 100%;
+            height:100%;
+            // The object-fit: cover property in CSS is used to control how the
+            // image or video full its container which in this case is the div
+            // The image or video will be resized to cover the Entire Container
+            // while Maintaining the Aspect Ratio. This mean that the image will
+            // fill the container completely, and parts of it may be cropped
+            // if the aspect ratio of the image does not match the aspect ratio
+            // of the container
+            // It ensure that the image look good and fill the available space
+            // but it may not show the entire image if the dimension differ from
+            // the container dimension
+            // cover will cover the entire grid item
+            object-fit: cover;
+            // This is the transition property applied to the img tag
+            transition: all .4s ease-in-out;
+            filter: grayscale(100%);
+            // When I hover, the Image is Changing Color
+            &:hover{
+                // This is used to apply the grayscale effect to the element
+                // making it appear to be shades of gray, the value 100% mean that
+                // the element will be fully converted to be grayscale effect
+                filter: grayscale(100);
+            }
+        }
+      }
+  }
+
+  .right-header{
+    // The children of .right-header become Flex Container items
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 18rem;
+
+    .name{
+        font-size: 3rem;
+        span{
+            color: var(--color-secondary);
+        }
+    }
+    // Targeting the p tag inside the .right-header
+    p{
+        margin: 1.5rem 0;
+        line-height:2rem;
+    }
+  }
+ 
+}
+
+.about-container{
+    // Convert the about-container into the Grid Container for its children element
+    display: grid;
+    // about-container has 2 children, left-about and right-about element
+    grid-template-columns: repeat(2,1fr);
+    // Create the padding-top of 3.5rem
+    padding-top: 3.5rem;
+    // Create the padding-bottom of 5rem
+    padding-bottom: 5rem;
+    .right-about{
+    // Convert the right-about into the Grid Container for its children element
+        display: grid;
+    // Convert the right-about into 2 Grid Columns itself
+        grid-template-columns: repeat(2,1fr);
+    // It will create a gap on the grid for the Grid Children Element
+        grid-gap: 2rem;
+        .about-item{
+            // Creating the border here
+            border: 1px solid var(--color-grey-5);
+            // Add the border-radius of 5px
+            border-radius: 5px;
+            // Add the transition effect to the about-item that change
+            // such as the border, border-radius and any other style
+            // that may altered during the events like hover or focus
+            transition: all .4s ease-in-out;
+            box-shadow: 1px 2px 15px rgba(0,0,0,.1);
+            // When there is a hover on the element
+            &:hover{
+                // This will create a cursor by default
+                cursor: default;
+                // Using the transform method to move the element 
+                // slightly upward by 5px on hover effect
+                transform: translateY(-5px);
+                // Change the border color to be --color-secondary
+                border: 1px solid var(--color-secondary);
+                // Change the Opacity to be .32 from .1
+                // when there is a hover effect
+                box-shadow: 1px 4px 15px rgba(0,0,0,.32);
+            }
+            // The abt-text has 2 children inside
+            // the small-text and large-text
+            .abt-text{
+                padding: 2rem;
+                // Change it into the flex object
+                display: flex;
+                text-align: center;
+                // Children elements will be flexed in the Vertical Manner
+                flex-direction: column;
+                .large-text{
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: var(--color-secondary);
+                }
+                .small-text{
+                // Using padding to create spacing between the children itself
+                // inside the parent element
+                    padding-left: 3rem;
+                    position: relative;
+                // Transform the text to uppercase
+                    text-transform: uppercase;
+                // Create the font-size of 1.2rem for the .small-text
+                    font-size: 1.2rem;
+                    color: var(--color-grey-1);
+                    letter-spacing: 2px;
+                // Create the Horizontal line to the left
+                // before the .small-text variable
+                    &::before{
+                    // This will create the Empty Horizontal Line
+                    // which is the Pseudo Element
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 15px;
+                        width: 2rem;
+                        height: 2px;
+                        background-color: var(--color-grey-5);
+                    }
+                }
+            }
+        }
+    }
+    .left-about{
+        padding-right: 5rem;
+
+        p{
+            line-height: 2rem;
+            padding: 1rem;
+            color:var(--color-grey-1);
+
+        }
+
+        h4{
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+    }
+}
+
+.about-stats{
+    padding-bottom: 4rem;
+    .progress-bars{
+        // Convert to the Grid Container
+        display: grid;
+        // progress-bars have 2 children
+        // which is the text and the progress bar
+        grid-template-columns: repeat(2,1fr);
+        // Creating the gap of 2rem
+        grid-gap: 2rem;
+        // progress-bar have the text and the progress-container
+        .progress-bar{
+            // Make it the flex items
+            display: flex;
+            flex-direction: column;
+            .prog-title{
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+            .progress-container{
+                // Convert it into the flex-items
+                display: flex;
+                // This align-items: center 
+                // will affect the children elements
+                // inside the progress-container
+                align-items: center;
+                .prog-text{
+                    // Setting the color for the text
+                    color: var(--color-grey-2);
+                }
+                // Creating the progress bar in grey color
+                .progress{
+                    
+                    // Define the width and height of the progress bar
+                    // The 100% is based on the width of the progress-container
+                    // which is in turn determine by the text and the progress-bar itself
+                    width: 100%;
+                    // Create the height for the progress bar
+                    height: .5rem;
+                    // Define the background-color of the progress bar here
+                    background-color: var(--color-grey-4);
+                    // Create the margin-left on the progress bar
+                    margin-left: 1rem;
+                    // position: relative
+                    position: relative;
+                    border-radius: 5px;
+                }
+                span{
+                    // Take the reference from the position: relative
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    // Take reference of the height from .5rem
+                    height: 100%;
+                    background-color: var(--color-secondary);
+                    transition: all .4s ease-in-out;
+                    width: 60%;
+                }
+
+                .html{
+                    width: 70%;
+                }
+                .android{
+                    width: 80%;
+                }
+                .mern{
+                    width: 76%;
+                }
+                .python{
+                    width: 90%;
+                }
+                .css{
+                    width: 60%;
+                }
+                .javascript{
+                    width: 80%;
+                }
+            }
+        }
+
+    }
+}
+
+// Targeting the stat.title class here
+.stat-title{
+    // Transform the text to UPPERCASE
+    text-transform: uppercase;
+    // Increasing the font-size to 3rem
+    font-size: 3rem;
+    // Align the text to center using the text-align property
+    text-align: center;
+    // Create the padding of 3.5rem 0 for top bottom and left right 
+    // respectively
+    padding: 3.5rem 0;
+    // This is the relative positioning
+    position: relative;
+    // Using the before property here
+    &::before{
+        // This is the position: absolute for the position: relative
+        position: absolute;
+        content: '';
+        left: 30%;
+        top:0;
+        width: 40%;
+        height: 5px;
+        background-color: var(--color-grey-5);
+        translate: translateX(-50%);
+    }
+}
+
+.timeline{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 2rem;
+    padding-bottom: 3rem;
+    .timeline-item{
+        position: relative;
+        padding-left: 3rem;
+        // Create the border on the left which is the Vertical Black Line
+        border-left:1px solid var(--color-white);
+    }
+    // Shift the briefcase icon to the left by 27px
+    .tl-icon{
+        position: absolute;
+        left: -27px;
+        top:0;
+        background-color: var(--color-secondary);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i{
+            font-size: 1.5rem;
+        }
+    }
+    .tl-duration{
+        padding: .2rem .6rem;
+        background-color: var(--color-grey-5);
+        border-radius: 15px;
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    h5{
+        padding: 1rem 0;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 600;
+        span{
+            color: var(--color-grey-2);
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+        p{
+            color: var(--color-grey-2);
+            
+        }
+    }
+}
+
+
+// Portfolios Section
+.port-text{
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.portfolios{
+    // display in the form of Grid Format
+    display: grid;
+    // Make the grid in 3 Columns and repeat 3 Columns
+    grid-template-columns: repeat(3,1fr);
+    // Creating a gap between the Grid
+    grid-gap:2rem;
+    margin-top: 3rem;
+    .portfolio-item{
+        position: relative;
+        img{
+            // Using the width of 100% and
+            // Height of 100% will fill the Entire Grid Inside
+            // Since the img is the parent of the portfolios
+            width: 100%;
+            height: 100%;
+            // This will cover the entire grid icon
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        .hover-item{
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-secondary);
+            position: absolute;
+            top:0;
+            left:0;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0;
+            transform: scale(0);
+            transition: all .4s ease-in-out;
+            h3{ 
+                font-size: 1.5rem;
+                color: var(--color-white);
+                margin-bottom: 1.5rem;
+
+            }
+
+            .icons{
+                // Make it into a Flex Object
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .icon{
+                    // Creating the background-color: var(--color-primary)
+                    background-color: var(--color-primary);
+                    // Make the border rounded which turn it into a circle
+                    border-radius: 50%;
+                    // Creating the width and height of 50px
+                    width: 50px;
+                    height: 50px;
+                    // display: flex is to center
+                    // the icons in the center
+                    display: flex;
+                    // align-items and justify-content make the icon
+                    // in the center of the circle
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 1rem;
+                    // Create the transition for the icon element
+                    transition: all .4s ease-in-out;
+
+                i{
+                    font-size: 1.5rem;
+                    color: var(--color-white);
+                    margin: 0 1rem;
+                }
+                // When there is hover effect use the &:hover properties
+                // it will change color to white for the icon
+                // and white for the background-color
+                // Hover Effect will change the background-color
+                // and the color of the text:
+                &:hover{
+                    background-color: var(--color-white);
+                    i {
+                        color: var(--color-primary);
+                        
+                    }
+                }
+            }
+        }
+    }
+    // The object-fit: contain; property in the CSS is used to control
+    // how the image or other replaced content like video, is resized
+    // to fit the container
+    // The entire image will be scaled and maintain aspect ratio within
+    // the specified width and height of the container( In this case,
+    // width: 100% and height: 300px
+    // In summary, object-fit: contain ensure that the image look good and 
+    // it is fully visible without distortion, even if it is not filling the 
+    // entire area of the container
+
+}
+}
+
+// On hover, it will show the green square 
+// Create the hover effect on the portfolio-item
+.portfolio-item:hover .hover-item{
+    opacity: 1;
+    transform: scale(1)
+}
+
+// Contact section
+.contact-content-con{
+    display: flex;
+    padding-top: 3.5rem;
+    .left-contact{
+        flex: 2;
+        h4{
+            margin-top: 1rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+        p{
+            margin: 1rem 0;
+            line-height: 2rem;
+        }
+        .contact-info{
+            .contact-item{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            p {
+                margin: .3rem 0 !important;
+                padding: 0 !important;
+            }
+            .icon{
+                display: grid;
+                grid-template-columns: 40px 1fr;
+                i{
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.3rem;
+                    
+                }
+
+            }
+        }
+    }
+
+    .contact-icon{
+        display:flex;
+        margin-top: 2rem;
+        a{
+            display: flex;
+            align-items: center;
+            color:var(--color-white);
+            background-color: var(--color-grey-5);
+            cursor:pointer;
+            justify-content: center;
+            width:50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 2rem;
+            transition: all .4s ease-in-out;
+            &:hover{
+                background-color: var(--color-secondary);
+                color: var(--color-primary);
+            }
+        }
+        // i is inside the a tags
+        i{
+            // Center the icon within the a tags
+            display: flex;
+            // align-items and justify-content center
+            // will center the icon in the middle of the a container
+            align-items: center;
+            justify-content: center;
+            // Change the Size of the Icon here
+            font-size: 1.5rem;
+        }
+
+    }
+    .right-contact{
+        flex:3;
+        margin-left: 3rem;
+        .input-control{
+            margin: 1.5rem 0;
+            // The input and the textarea will
+            // have the following property
+            input, textarea{
+                border-radius: 30px;
+                font-weight: inherit;
+                font-size: inherit;
+                font-family: inherit;
+                padding:.8rem 1.1rem;
+                outline: none;
+                border: none;
+                background-color: var(--color-grey-5);
+                width: 100%;
+                color: var(--color-white);
+                resize: none;
+            }
+        }
+        .i-c-2{
+            // Display flex on the Children Element
+            // inside the i-c-2 Parent Element
+            display: flex;
+            // The last div or element 
+            // inside the parent of i-c-2
+            // is called the last-child
+            :last-child{
+                margin-left: 1.5rem;
+            }
+        }
+        .submit-btn{
+            // Need to add the display: flex
+            // here in order to use justify-content property
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+
+
+}
+
+
+
+// Independent Components
+
+.btn-con{
+// Make it a flex-item
+    display: flex;
+// If there is no width and height defined
+// The parent will shrink based on the content itself
+// if the align-self: flex-start property is defined here
+// Since the width is not defined, the element will take up 
+// as much space as the content require
+// If the height is not defined, the element height will be determined
+// by the content inside it, if the content is short, the element will appear shorter
+// potentially leading to a smaller border
+    align-self: flex-start;
+
+}
+
+
+.main-btn{
+    // Creating the border-radius: 30px
+    border-radius: 30px;
+    // Inherit from the right-header
+    color: inherit;
+    font-weight: 600;
+    // This is the position: relative
+    // that the ::before is looking for as a point of reference
+    position: relative;
+    // Creating the color of --color-secondary
+    border: 1px solid var(--color-secondary);
+    // Flex the children in the Horizontal Manner
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    // Styling the Text inside the div itself
+    .btn-text{
+        padding: 0 2rem;
+    }
+    // Styling the Icon inside the div itself
+    .btn-icon{
+       background-color: var(--color-secondary);
+       display: flex;
+    //  Align the item Horizontally
+       align-items: center;
+    // Center the item Vertically
+       justify-content: center;
+    //  Creating the Circular Border Radius
+       border-radius: 50%;
+    // Creating the Padding inside the Button
+       padding: 1rem;
+
+    }
+    // When the button is not hovered
+    // It is positioned off-screen to the left
+    &::before{
+        content: '';
+    // Positioned closest to the Ancestor which is the 
+    // main-btn which has the position: relative;
+        position: absolute;
+    // Positioned to the top: 0 and right: 0
+        top: 0;
+        right:0;
+    // and translateX horizontally and shift 
+    // it to the left, starting position is at the Top Left Corner
+        transform: translateX(-100%);
+        transition: all .4s ease-out;
+        z-index: -1;
+    }
+    // On hover, Changing the State from -100% to 0%
+    // on the Horizontal X-axis
+    &:hover{
+        &::before{
+        // On hover, it cover the entire parent element
+        // which is the 100% width and height itself
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-secondary);
+        // Since it translateX(0), it mean that
+        // it basically mean the effect move from the left
+        // to the most right from -100% to the 0% Horizontally
+        // in the X-axis
+            transform: translateX(0%);
+        }
+    }
+}
+
+
+.blogs {
+    display: grid; // Enable grid layout
+    grid-template-columns: repeat(3, 1fr); // Three equal columns
+    grid-gap: 2rem; // Space between grid items
+    margin-top: 3rem;
+    border-radius: 5px;
+
+    .blog {
+        position: relative;
+        background-color: var(--color-grey-5);
+        border-radius: 5px;
+        box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+        // Prevent Overflow
+        overflow: hidden; 
+        transition: all 0.4s ease-in-out;
+        // Align the text to the center
+        text-align: center;
+
+        // Making the img fit into the Grid Layout
+        img {
+            // Make the image responsive and fit into the Grid Layout
+            width: 100%; 
+            // Maintain Aspect Ratio
+            // Set height based on the Content
+            height: auto; 
+            // Object Fit to Cover
+            object-fit: cover;
+            // Smooth Transition for the Effect ease-in-out
+            transition: all 0.4s ease-in-out;
+            // When hover, the grayscale is 0
+            // when it is not hovered, the grayscale is 100%
+            filter: grayscale(100%);
+        }
+        .blog-text{
+            // Create Spacing Between the Text and the Image
+            margin-top: -7px;
+            // Create Spacing around the Text
+            padding: 1.2rem;
+            // Create the border at the top of the text
+            border-top: 8px solid var(--color-secondary);
+            h4{
+                font-size: 1.5rem;
+                margin-bottom: .7rem;
+                transition: all .4s ease-in-out;
+                cursor:pointer;
+                &:hover{
+                    color: var(--color-secondary);
+
+
+                }
+            }
+            p{
+                color:var(--color-grey-2);
+                line-height: 2rem;
+                padding-bottom: 2rem;
+            }
+        }
+
+        &:hover {
+            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+
+            img {
+                filter: grayscale(0);
+                transform: scale(1.1); // Scale up on hover
+                box-shadow: 1px 4px 20px rgba(0, 0, 0, 0.8);
+            }
+        }
+    }
+}
+
+// This is the Title Text
+.main-title {
+    // Align the text to the center of the screen
+    text-align: center;
+    // Targeting the h2 inside the main-title
+    h2 {
+    // This is the position relative that the
+    // position: absolute .bg-text is looking for
+        position: relative;
+    // Transforming the Text to uppercase
+        text-transform: uppercase;
+    // Getting the font-size to be 4rem
+        font-size: 4rem;
+    // Getting the font-weight to be 700
+        font-weight: 700;
+    }
+    // Targeting the span inside the main-title
+    span {
+        color: var(--color-secondary);
+    }
+    // Targeting the bg-text inside the main-title
+    .bg-text {
+    // Placed itself nearest to the Ancestor which is the h2 element
+        position: absolute;
+    // Reference to the parent element due to position: absolute
+    // Which is top: 50% and left: 50%
+        top: 50%;
+        left: 50%;
+        color: var(--color-grey-5);
+        transition: all .4s ease-in-out;
+        // Placing the text behind the h2 text
+        z-index: -1;
+        // Move to the left by 50% of its own width
+        // Move the element up by 50% of its own height
+        // This is relative to the parent element
+        // Reference to the parent due to the position: absolute
+        transform: translate(-50%, -50%);
+        // font-weight of 800, making the text much bolder
+        font-weight: 800;
+        // Making the font bigger of 6.5rem
+        font-size: 5rem;
+    }
+}
+
+
+
+@import './media.scss';
+
+
+
+
+

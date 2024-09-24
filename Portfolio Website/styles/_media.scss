@@ -1,0 +1,230 @@
+// Find the Breakpoint which your Website will Start Breaking
+// Anything Below the max-width of 600px will display the following properties
+// CSS for Mobile Device Application
+
+@media screen and (max-width: 600px){
+   
+
+    // The div of about-container have the
+    // grid-template-columns of 1fr
+
+    .about-container{
+        grid-template-columns: 1fr;
+        // This is the right-about with the grid-template-columns
+        // of 1fr and padding-top of 2.5rem
+        // right-about is child of the about-container
+        .right-about{
+            grid-template-columns: 1fr;
+            padding-top: 2.5rem;
+        }
+        // left-about is child of the about-container
+        .left-about{
+            padding-right: 0;
+            p{
+            padding-left: 0;
+            }
+
+        }
+
+    }
+    // Create the grid-template-columns of 1fr
+    // on the Smaller Mobile Device of less than 600px
+    .timeline{
+        grid-template-columns: 1fr;
+        padding-bottom: 6rem;
+    }
+
+    .section{
+        padding: 2rem 2.5rem !important;
+    }
+    // Create only 1 Single Column in Smaller Device
+    // Create padding-bottom in Between the Elements of 6rem
+    // This will only display 1 Column for width below 600px
+    // using 1fr
+    .portfolios{
+        grid-template-columns: 1fr;
+        padding-bottom: 6rem;
+    }
+    // Create only 1 Single Column in Smaller Device
+    // Create padding-bottom in Between the Element of 6rem
+    .blogs{
+        grid-template-columns: 1fr;
+        padding-bottom: 6rem;
+    }
+
+    .main-title{
+        h2{
+            font-size: 2rem;
+            span{
+                font-size: 3 rem;
+            }
+            .bg-text{
+                font-size: 3 rem;
+            }
+        }
+    }
+
+}
+
+
+// Below the width of 1430px, it will display
+// the following properties
+@media screen and (max-width: 1430px){
+    header{
+        padding: 0 !important;
+    }
+    .section{
+        padding: 7rem 11rem;
+    }
+
+    .contact-content-con{
+        // Change the flex-direction to column on Smaller Screen
+        flex-direction: column;
+        // The right-contact of margin-left is 0 and margin-top of 2.5rem
+        .right-contact{
+            margin-left: 0;
+            margin-top: 2.5rem;
+
+        }
+
+    }
+    // The flex-direction will be column
+    .contact-content-con .right-contact .i-ctrl-2{
+        flex-direction: column;
+        
+    }
+    // Target the last child element inside the i-ctrl-2
+    .contract-content-con .right-contract .i-ctrl-2:last-child{
+        margin-left:0;
+        margin-top:1.5rem;
+    }
+    
+}
+
+
+// Below the width of 1080px, it will display
+// the following properties
+@media screen and (max-width: 1080px){
+    .about-container{
+        grid-template-columns: 1fr;
+        .right-about{
+            padding-top: 2.5rem;
+        }
+    }
+    // This will creafe 2 Columns 
+    // using 1fr 1fr
+    .portfolios{
+        grid-template-columns: 1fr 1fr;
+    }
+    .main-title{
+        h2{
+            font-size: 4rem;
+            span{
+                font-size: 4rem;
+            }
+            .bg-text{
+                font-size: 4.5rem;
+            }
+        }
+    }
+    
+
+}
+
+@media screen and (max-width: 980px){
+    .section{
+        padding: 7rem 6rem;
+    }
+     // Set the padding to 0 for the header
+     header{
+        padding: 0;
+    }
+    // Set the padding to 0rem with the !important keyword
+    header .right-header{
+        padding: 0 !important;
+    }
+    // Create the width, height, top and right properties
+    .theme-btn{
+        width: 30px;
+        height: 30px;
+        top: 5px;
+        right: 5px;
+    }
+    // Set the Grid Template Column to be 1fr
+    .header-content{
+        grid-template-columns: 1fr;
+        padding-bottom: 6rem;
+    }
+
+    .left-header{
+        .h-shape{
+            display: none;
+        }
+    }
+
+    .right-header{
+        grid-row: 1;
+        width: 90%;
+        margin: 0 auto;
+        name{
+            font-size: 2.5rem !important;
+        }
+    }
+
+    .header-content .left-header .image{
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .controls{
+        top: auto;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        background-color: var(--color-grey-5);
+        .control{
+            margin: .6rem 2rem !important;
+
+        }
+
+    }
+
+}
+
+// When it is max-width of 700px and below
+// This is the Breakdown where it will display
+// these properties
+@media screen and (max-width: 700px){
+    // Change the padding for max-width
+    // of 700px and below
+    .section{
+        padding: 7rem 3rem;
+    }
+
+    // Create the grid-template-columns of 1fr
+    // on the Smaller Mobile Device of less than 600px
+    .about-stats{
+        .progress-bars{
+            grid-template-columns: 1fr;
+        }
+    }
+    .main-title{
+        h2{
+            font-size: 3rem;
+        // Targeting the span inside h2 tag
+        span{
+        font-size: 3rem;
+        }
+        // Targeting the bg-text inside h2 tag
+        .bg-text{
+            font-size: 4rem;
+
+        }
+    }
+}
+
+}
